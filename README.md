@@ -1,6 +1,8 @@
 Create a magic mirror with video agents.
 
-​A video agent is a digital character that interacts with users in real-time video to answer questions and perform tasks.
+=================================================================
+​
+A video agent is a digital character that interacts with users in real-time video to answer questions and perform tasks.
 
 ​Task:
 
@@ -10,6 +12,8 @@ Create a magic mirror with video agents.
 
 ​​Deliver a 2-min live demo & 1-min Loom demo
 
+=================================================================
+
 ​Scope:
 
 ​Select any interactive conversational use case
@@ -17,6 +21,8 @@ Create a magic mirror with video agents.
 ​Develop custom characters, voices, and personalities
 
 ​Display all modalities across image, text, speech, video
+
+=================================================================
 
 ​Get started:
 
