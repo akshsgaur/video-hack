@@ -1,19 +1,29 @@
 import asyncio
 from simli import SimliClient, SimliConfig
+import simpleaudio as sa
+import os
+from utils.constants import simli_api
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+with open("sonic.raw","rb") as f:
+    audio = f.read()
+from simli.renderers import FileRenderer
+
+import asyncio
+from simli import SimliClient, SimliConfig
 from simli.renderers import FileRenderer
 async def main():
-    connection =  SimliClient(
+    async with SimliClient(
         SimliConfig(
-            apiKey="0svhul6ckcep0jhse79xh",  # API Key
-            faceId="YOUR_FACE_ID",  # Face ID
+            apiKey=simli_api,  # API Key
+            faceId="5514e24d-6086-46a3-ace4-6a7264e5cb7c",  # Face ID
             maxSessionLength=20,
             maxIdleTime=10,
         )
-    )
-    await connection.Initialize()
-    await connection.sendSilence(1)  # to send 1 second of silence to the API
-    await connection.send(audio)  # where audio is a bytes object representing the raw audio data
-
+    ) as connection:
+        await connection.send(audio) # Audio is the raw PCM16 16khz mono audio data
+        await FileRenderer(connection).render() # Write the output to an output.mp4 file
 
 asyncio.run(main())
-
