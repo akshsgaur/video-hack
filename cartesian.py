@@ -31,8 +31,8 @@ data = client.tts.bytes(
     # You can find the supported `output_format`s at https://docs.cartesia.ai/api-reference/tts/bytes
     output_format={
         "container": "wav",
-        "encoding": "pcm_f32le",
-        "sample_rate": 44100,
+        "encoding": "pcm_s16le",
+        "sample_rate": 16000,
     },
 )
 
